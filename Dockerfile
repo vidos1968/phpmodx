@@ -24,13 +24,6 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/datetime.ini
 
 VOLUME /var/www/html
-ENV MODX_VERSION 2.7.1
-ENV MODX_SHA1 c39481a0d3f14d2234a03787fdc2728478177b79
-RUN curl -o modx.zip -SL http://modx.com/download/direct/modx-${MODX_VERSION}-pl.zip \
-	&& unzip modx.zip -d /var/www/html \
-    && mv /var/www/html/modx-${MODX_VERSION}-pl /var/www/html/modx \
-    && rm modx.zip \
-    && chown -R www-data:www-data /var/www/html/modx
 
 
 CMD ["php-fpm"]
