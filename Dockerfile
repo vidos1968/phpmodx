@@ -5,7 +5,7 @@ FROM php:7.2-fpm
 # install the PHP extensions we need
 RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev unzip sudo && rm -rf /var/lib/apt/lists/* \
 	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-	&& docker-php-ext-install gd opcache mysqli pdo pdo_mysql
+	&& docker-php-ext-install gd opcache mysqli pdo pdo_mysql zip
 
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
