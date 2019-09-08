@@ -22,6 +22,9 @@ RUN { \
 RUN { \
 		echo 'date.timezone=GMT+0'; \
 	} > /usr/local/etc/php/conf.d/datetime.ini
+	
+	
+RUN chown -R www-data:www-data /var/www/html
 
 VOLUME /var/www/html
 
